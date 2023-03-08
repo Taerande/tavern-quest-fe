@@ -1,0 +1,5 @@
+.cardAction {
+    display: flex !important;
+    justify-content: flex-end;
+    padding: 0 1rem 1rem 1rem;
+}

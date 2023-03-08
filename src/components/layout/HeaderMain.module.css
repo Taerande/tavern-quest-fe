@@ -1,0 +1,8 @@
+.main-panel{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5% 0 5%;
+
+}

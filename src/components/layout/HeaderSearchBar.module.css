@@ -1,0 +1,30 @@
+.input {
+    border-radius: 50px;
+    height: 30px;
+    min-width: 300px;
+    padding-left: 1rem;
+    border: 2px solid #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input:focus{
+    outline: none;
+    caret-color:blue;
+    /* box-shadow: 0 0 10px red; */
+}
+.input:focus::placeholder{
+    color: transparent;
+    /* box-shadow: 0 0 10px red; */
+}
+.input::placeholder {
+    color: #999;
+}
+.input:before {
+    content: "\f002";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0.75em;
+    top: 50%;
+    transform: translateY(-50%);
+}

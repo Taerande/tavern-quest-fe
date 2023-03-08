@@ -1,0 +1,34 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-bottom: 5px;
+}
+.charInfo{
+    display: flex;
+    align-items: center;
+}
+.charInfo div{
+    font-size: 14px;
+}
+
+.avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+}
+.gear, .detail{
+    margin: 0px 10px;
+}
+
+.statusMenu{
+    display: flex;
+    align-items: center;
+}
+.statusButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

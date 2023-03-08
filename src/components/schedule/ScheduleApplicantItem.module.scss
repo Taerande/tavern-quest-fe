@@ -1,0 +1,56 @@
+.userInfo {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.details {
+    padding-right: 10px;
+}
+
+.gear>div {
+    font-size: 12px;
+    text-align: left;
+}
+
+.spec {
+    text-align: center;
+}
+
+.specAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.specName {
+    font-size: 12px;
+    background-color: black;
+    border-radius: 16px;
+    padding: 4px;
+}
+
+.comments {
+    text-align: center;
+    cursor: pointer;
+}
+.exLinks{
+    a{
+        display: block;
+        img{
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+    }
+}
+
+.applyDetails{
+    
+}

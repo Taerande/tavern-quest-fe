@@ -1,0 +1,126 @@
+[
+    {
+        "id":"df_keystone_s1",
+        "type":"keystone",
+        "name":"용군단 쐐기 시즌 1",
+        "instances":[
+            {
+                "id":"df_s1_ruby_life_pools",
+                "name":"루비 생명의 웅덩이"
+            },
+            {
+                "id":"df_s1_algeth'ar_academy",
+                "name":"알게타르 대학"
+            },
+            {
+                "id":"df_s1_the_nokhud_offensive",
+                "name":"노쿠드 공격대"
+            },
+            {
+                "id":"df_s1_the_azure_vault",
+                "name":"하늘빛 보관소"
+            },
+            {
+                "id":"df_s1_court_of_stars",
+                "name":"별의 궁전"
+            },
+            {
+                "id":"df_s1_halls_of_valor",
+                "name":"용맹의 전당"
+            },
+            {
+                "id":"df_s1_shadowmoon_burial_grounds",
+                "name":"어둠달 지하묘지"
+            },
+            {
+                "id":"df_s1_temple_of_the_jade_serpent",
+                "name":"옥룡사"
+            }
+        ]
+    },
+    {
+        "id":"df_dungeon",
+        "type":"dungeon",
+        "name":"용군단 던전",
+        "instances":[
+            {
+                "id":"df_ruby_life_pools",
+                "name":"루비 생명의 웅덩이"
+            },
+            {
+                "id":"df_brackenhide_hollow",
+                "name":"담쟁이가죽 골짜기"
+            },
+            {
+                "id":"df_the_nokhud_offensive",
+                "name":"노쿠드 공격대"
+            },
+            {
+                "id":"df_uldaman:_legacy_of_tyr",
+                "name":"울다만: 티르의 유산"
+            },
+            {
+                "id":"df_neltharus",
+                "name":"넬타루스"
+            },
+            {
+                "id":"df_the_azure_vault",
+                "name":"하늘빛 보관소"
+            },
+            {
+                "id":"df_halls_of_infusion",
+                "name":"주입의 전당"
+            },
+            {
+                "id":"df_algeth'ar_academy",
+                "name":"알게타르 대학"
+            }
+        ]
+    },
+    {
+        "id":"df_raid",
+        "type":"raid",
+        "name":"용군단 레이드",
+        "instances":[
+            {
+                "id":"df_vault_of_the_incarnates",
+                "name":"현신의 금고",
+                "boses":[
+                    {
+                        "id":"df_r1_ranog",
+                        "name":"에라노그"
+                    },
+                    {
+                        "id":"df_r1_the_primal_council",
+                        "name":"원시 의회"
+                    },
+                    {
+                        "id":"df_r1_dathea_ascended.",
+                        "name":"승천한 자 다테아"
+                    },
+                    {
+                        "id":"df_r1_terros",
+                        "name":"테로스"
+                    },
+                    {
+                        "id":"df_r1_sennarth",
+                        "name":"차가운 숨결의 세나스"
+                    },
+                    {
+                        "id":"df_r1_kurog_grimtotem",
+                        "name":"쿠로그 그림토템"
+                    },
+                    {
+                        "id":"df_r1_broodkeeper_diurna",
+                        "name":"혈족지기 디우르나"
+                    },
+                    {
+                        "id":"df_r1_raszageth_the_storm-eater",
+                        "name":"폭풍포식자 라자게스"
+                    }
+
+                ]
+            }
+        ]
+    }
+]

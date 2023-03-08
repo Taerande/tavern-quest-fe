@@ -1,0 +1,9 @@
+.managepanel{
+    display: flex;
+    background-color: white;
+    padding: 0px 10px;
+}
+
+.managepanel:hover{
+    filter: brightness(95%);
+}

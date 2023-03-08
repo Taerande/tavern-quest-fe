@@ -1,0 +1,108 @@
+.time_container{
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+}
+.time{
+    display: block;
+    margin: 6px;
+}
+.time input[type="time"]{
+    position: relative;
+    margin: 3px;
+    height: 48px;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 42px;
+    background: url(../../../assets/images/clock.svg) no-repeat right 21px center / 16px auto;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+}
+.time input[type="time"]::-webkit-clear-button,
+.time input[type="time"]::-webkit-inner-spin-button{
+    display: none;
+}
+
+.time input[type="time"]::-webkit-calendar-picker-indicator{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+.time input[type="time"]:focus{
+    outline: 1px solid var(--primary-color);
+
+}
+.time input[type="time"]::before{
+    content: attr(data-placeholder);
+    width: 100%;
+}
+.time input[type="time"]:valid::before{
+    display: none;
+}
+.time input[type="time"][data-placeholder]::before{
+    color: black;
+    font-size: 12px;
+}
+
+
+
+.time input[type="date"] {
+    position: relative;
+    height: 48px;
+    width: 100%;
+    margin: 3px;
+    padding-left: 16px;
+    padding-right: 42px;
+    background: url(../../../assets/images/calender.svg) no-repeat right 21px center / 16px auto;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+}
+
+.time input[type="date"]::-webkit-clear-button,
+.time input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.time input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+.time input[type="date"]:focus {
+    outline: 1px solid var(--primary-color);
+
+}
+
+.time input[type="date"]::before {
+    content: attr(data-placeholder);
+    width: 100%;
+}
+
+.time input[type="date"]:valid::before {
+    display: none;
+}
+
+.time input[type="date"][data-placeholder]::before {
+    color: black;
+    font-size: 12px;
+}
+
+.error {
+    position: absolute;
+    bottom: -13px;
+    left: 20px;
+    font-size: 12px;
+    color: var(--alert-color);
+}

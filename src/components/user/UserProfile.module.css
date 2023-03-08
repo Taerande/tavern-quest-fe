@@ -1,0 +1,45 @@
+.container{
+    margin: auto;
+}
+.profileContainer{
+    border: 1px solid var(--primary-color);
+    border-radius: 16px;
+    display: flex;
+    padding: 2rem;
+    /* justify-content: center; */
+    align-items: center;
+    column-gap: 32px;
+}
+.avatarContainer{
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.avatar{
+    height: 100%;
+    width: 100%;
+}
+.avatarOverlay{
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 40px;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+figure{
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+}
+.displayName,
+.email{
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

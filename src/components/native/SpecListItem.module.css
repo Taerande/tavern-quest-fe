@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    padding: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+.container:hover{
+    background-color: black;
+    filter: grayscale(3);
+}
+.selected:hover{
+    background-color: black;
+    filter: grayscale(3);
+}
+.selected{
+    background-color: black;
+    filter: grayscale(3);
+}
+.avatar{
+    height:30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.spec{
+    padding-left: 2px;
+    font-size: 12px;
+}

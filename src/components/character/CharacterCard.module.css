@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    padding: 10px;
+    border-radius: 8px;
+    align-items: center;
+    border: 1px solid #f2f2f2;
+    margin: 5px;
+    cursor: pointer;
+    justify-content: space-between;
+    background-color: white;
+}
+.container:hover{
+    filter: brightness(95%);
+}
+.userInfo{
+    display: flex;
+    align-items: center;
+}
+.isSelected{
+    background-color: var(--success-color);
+}
+
+.avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.details{
+    padding-right: 10px;
+}
+.sepc >div{
+    font-size: 12px;
+    text-align: right;
+}

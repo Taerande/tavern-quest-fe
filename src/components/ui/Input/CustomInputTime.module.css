@@ -1,0 +1,90 @@
+/* root */
+.timePicker{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* header */
+.timePickerHeader{
+    font-size: 14px;
+    color: #222;
+}
+
+/* main */
+.timePickerMain{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+.timePickerMain input[type="number"]::-webkit-inner-spin-button,
+.timePickerMain input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.timePickerMain label, .timePicker label input {
+    padding: 5px;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+}
+
+
+.timePickerMain label >input:nth-last-child(1){
+    flex-direction: column;
+    row-gap: 10px;
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+}
+
+.timePickerMain label > ul {
+    list-style: none;
+    position: absolute;
+    width: 55px;
+    color: var(--warning-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: auto;
+    background-color: white;
+    z-index: 1;
+    scrollbar-width: 0px;
+    height: 9rem;
+}
+.timePickerMain label>ul::-webkit-scrollbar{
+    width: 0px;
+}
+.timePickerMain label>ul::-webkit-scrollbar-track {
+    background: transparent;
+}
+.controller-up{
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    font-size: 12px;
+    width: 100%;
+}
+.controller-down{
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    font-size: 12px;
+    width: 100%;
+}
+
+.divider{
+    font-size: 36px;
+    font-weight: 900;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+/* actions */

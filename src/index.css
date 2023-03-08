@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --primary-color: #2ecc71;
+  --success-color: #66bb6a;
+  --alert-color: #ef5350;
+  --info-color: #42a5f5;
+  --light-color: #ecf0f1;
+  --dark-color: #34495e;
+  --warning-color: #ffa726;
+  --white-color: white;
+  --black-color: black;
+  --success-snack-color: #2ecc71;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+  * {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  * {
+    font-size: 12px;
+  }
+}
+body {
+  word-break: break-all;
+}
+main {
+  min-height: 100vh;
+}
+.absolute_center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.txtCaption {
+  font-size: 12px;
+}
+
+.txtTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.line2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.subTitle{
+  color: var(--primary-color);
+  background-color: white;
+  font-weight: bold;
+  position: relative;
+  font-size: 20px;
+  width: fit-content;
+  padding-right: 5px;
+  top: -15px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  color: #2ecc71;
+  /* background-color: red; */
+}
+
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  border-radius: 10px;
+  background-color: #2ecc71;
+}
+a:link,
+a:visited,
+a:hover {
+  color: black;
+  text-decoration: none;
+}

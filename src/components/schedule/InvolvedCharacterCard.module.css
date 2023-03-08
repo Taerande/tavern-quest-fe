@@ -1,0 +1,16 @@
+.involvedchar{
+
+
+}
+
+.details{
+    display: flex;
+    column-gap: 5px;
+}
+.chip{
+    border-radius: 50px;
+    color: white;
+    padding: 4px 8px;
+    border: 1px solid white;
+    font-size: 12px;
+}

@@ -1,0 +1,16 @@
+.recruit{
+    display: flex;
+    align-items: center;
+}
+
+.scheduleContainer:hover {
+    background-color: var(--dark-color);
+}
+.scheduleContainer:hover div > *{
+    color: var(--light-color);
+}
+.header{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}

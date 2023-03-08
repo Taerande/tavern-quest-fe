@@ -1,0 +1,17 @@
+.slider input {
+    width: 100%;
+    outline: none;
+    height: 20px;
+
+}
+
+.slider input::-webkit-slider-thumb{
+    height: 200px;
+}
+
+.slider input::-webkit-slider-runnable-track{
+    background-color: none;
+    -webkit-appearance: none;
+    color: red;
+    height: 30px;
+}

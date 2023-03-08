@@ -1,0 +1,30 @@
+.header{
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 10px 0px;
+}
+.avatar{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+.avatarContainer{
+    text-align: center;
+    padding: 4px;
+}
+.main >div{
+    padding: 4px 0px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+.dateTime,
+.dateTime >div{
+    display: flex;
+    align-items: center;
+}
+.recruit,
+.instance{
+    display: flex;
+    align-items: center;
+}

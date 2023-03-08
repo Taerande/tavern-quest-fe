@@ -1,0 +1,22 @@
+.footer{
+    padding: 20px 5%;
+    text-align: center;
+    word-break: break-all;
+    background-color: var(--dark-color);
+}
+.sitemap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+.navActive{
+    text-decoration: none;
+}
+.sitemap>a:visited {
+    color: var(--primary-color);
+}
+.sitemap>a{
+    text-decoration: none;
+    color: var(--primary-color);
+}

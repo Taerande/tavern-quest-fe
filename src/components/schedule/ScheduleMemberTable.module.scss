@@ -1,0 +1,72 @@
+.schedule {
+    row-gap: 1rem;
+    margin: 1rem;
+    display: grid;
+}
+.memberTable{
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    th {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+        color: var(--light-color);
+        font-weight: bold;
+        border-bottom: 2px solid #555;
+    }
+    
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+}
+
+
+.userInfo {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.details {
+    padding-right: 10px;
+}
+
+.gear >div {
+    font-size: 12px;
+    text-align: left;
+}
+.spec{
+    text-align: center;
+}
+.specAvatar{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+.specName{
+    margin: auto;
+    width: 100px;
+    font-size: 12px;
+    background-color: black;
+    border-radius: 16px;
+    padding: 2px 0px;
+}

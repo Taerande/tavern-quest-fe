@@ -1,0 +1,70 @@
+.avatar{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+.characterInfo{
+    display: flex;
+    align-items: center;
+}
+.status{
+    cursor: pointer;
+}
+.statusList{
+    position: absolute;
+    width: 90px;
+    left: 30%;
+    border-radius: 8px;
+    padding: 8px 0px;
+    z-index: 3;
+    background-color: white;
+    top: 25%;
+    animation: slide-down 200ms ease-out forwards;
+        box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.2),
+            0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+            0px 2px 6px 0px rgba(0, 0, 0, 0.12);
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(3rem);
+    }
+}
+.statusList >li{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 12px;
+    cursor: pointer;
+}
+.statusList >li:hover{
+    background-color: var(--light-color);
+}
+.currentStatus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.1s ease;
+}
+.currentStatus:hover{
+    transform: scale(1.1);
+}
+.status{
+    position: relative;
+    padding-right: 4px;
+
+}
+.actions{
+
+}
+
+td{
+    height:70px;
+}

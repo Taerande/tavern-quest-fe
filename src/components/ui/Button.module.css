@@ -1,0 +1,32 @@
+.button{
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    height: fit-content;
+    width: fit-content;
+    cursor: pointer;
+    margin: 4px;
+    transform: filter 0.3s ease;
+    word-break: keep-all;
+}
+.button >div {
+    font-size: 14px;
+}
+.button:hover {
+    filter: brightness(105%);
+}
+.button:active {
+    filter: brightness(95%);
+}
+.button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}

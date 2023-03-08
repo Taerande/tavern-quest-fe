@@ -1,0 +1,38 @@
+.container{
+    padding: 8px;
+}
+.controllPanel{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.title{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title >div:first-child{
+    display: flex;
+    align-items: center;
+}
+/* .author{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+} */
+.detail{
+    display: flex;
+    column-gap: 10%;
+}
+.recruit{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.avatar {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+}

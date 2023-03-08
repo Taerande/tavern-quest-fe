@@ -1,0 +1,19 @@
+.container{
+    text-align: center;
+    margin: 5px;
+}
+
+.avatar{
+    width: 36px;
+    height:36px;
+    border-radius: 50%;
+}
+.chip{
+    background-color: black;
+    border-radius: 8px;
+    padding: 3px 5px;
+    margin-bottom: 8px;
+}
+.chip >div{
+    font-size: 12px;
+}

@@ -1,0 +1,74 @@
+.container{
+    position: absolute;
+    width: 200px;
+    padding-top: 10px;
+    right: 0px;
+    top: 45px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #f2f2f2;
+    animation: slide-down 200ms ease-out forwards;
+    box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.2),
+                0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+                0px 2px 6px 0px rgba(0, 0, 0, 0.12);
+}
+.container >div{
+    padding: 10px 0px;
+}
+.noti >div{
+    width: 40%;
+    text-align: center;
+    padding: 5px;
+    background-color: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.noti >div:hover{
+    background-color: #f2f2f2;
+}
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-3rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.noti{
+    display: flex;
+    justify-content: space-around;
+}
+.bookmark >a{
+    display: block;
+    text-decoration: none;
+    padding: 4px 0px;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+.bookmark>a:visited{
+    color: inherit;
+}
+.bookmark>a:hover{
+    filter: brightness(90%);
+}
+.container hr{
+    margin: 0px 15px;
+    border: 1px solid #f2f2f2;
+}
+.logout{
+    cursor: pointer;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.active{
+    background-color: var(--dark-color) !important;
+    color: var(--light-color) !important;
+}
