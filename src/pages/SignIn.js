@@ -2,7 +2,6 @@ import Button from 'components/ui/Button'
 import InputText from 'components/ui/Input/InputText'
 import styles from './SignIn.module.css'
 import { useDispatch } from 'react-redux';
-import { authActions } from 'store/auth-slice';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { uiActions } from 'store/ui-slice';
@@ -17,7 +16,7 @@ const SignIn = () => {
     const dispatch = useDispatch()
     const history = useNavigate();
     const [autoLogin, setAutoLogin] = useState(false);
-    const [googleBtnLoading, setGoogleBtnLoading] = useState(false);
+    // const [googleBtnLoading, setGoogleBtnLoading] = useState(false);
     const [emailBtnLoading, setEmailBtnLoading] = useState(false);
 
     const autoLoginOnChangeHandler = (e) => {
@@ -63,7 +62,11 @@ const SignIn = () => {
         }
         loginToLaravel(data).then(async(res) => {
             if (res.data.token) {
-                Cookies.set('session_cookie', res.data.token);
+                if (res.data.autoLogin === 'true') {
+                    Cookies.set('session_cookie', res.data.token, {expires: 30});
+                } else {
+                    Cookies.set('session_cookie', res.data.token);
+                }
                 await dispatch(getLaravelAuth());
                 // dispatch(authActions.setUser({ isLogin: true, uid: user.id, displayName: user.name, photoUrl: user.photoUrl }));
                 setEmailBtnLoading(false);

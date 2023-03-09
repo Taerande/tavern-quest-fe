@@ -10,8 +10,7 @@ import wowDungeons from 'assets/game_data/wowDungeons.json'
 import { deleteSchedule } from 'api/partyApi';
 let allInstances = [];
 wowDungeons.map((v) => { return allInstances = [...allInstances, ...v.instances] });
-const ScheduleHeader = ({ partyInfo, scheduleInfo }) => {
-    console.log(scheduleInfo);
+const ScheduleHeader = ({ leaderInfo, scheduleInfo }) => {
     const auth = useSelector(state => state.auth);
     const [deleteLoadingBtn, setDeleteLoadingBtn] = useState(false);
     const dispatch = useDispatch();
@@ -21,7 +20,6 @@ const ScheduleHeader = ({ partyInfo, scheduleInfo }) => {
         setDeleteLoadingBtn(true);
         if (window.confirm('정말 스케쥴을 삭제 하시겠습니까?')) {
             deleteSchedule(scheduleInfo.id).then((res) => {
-                console.log(res);
                 setDeleteLoadingBtn(false);
                 dispatch(uiActions.toggleSnackbar({ type: 'success', value: true, message: '일정을 삭제했습니다.' }))
                 history('/');
@@ -34,23 +32,23 @@ const ScheduleHeader = ({ partyInfo, scheduleInfo }) => {
 
     return (<>
         {scheduleInfo.id && <div className={styles.container}>
-            {/* <div className={styles.controllPanel}>
-                {auth.uid === partyInfo.user_id ?
+            <div className={styles.controllPanel}>
+                {leaderInfo ?
                     <>
                         <Button loading={deleteLoadingBtn} onClick={deleteScheduleHandler}>Delete</Button>
                     </>    
                     : <ApplySchedule data={ scheduleInfo } />}
-            </div> */}
+            </div>
             
                 <div className={styles.title}>
                     <div>
                         <img className={styles.avatar} src={require('assets/images/wow_logo.png')} alt='wow_logo' />
                         <h1>{scheduleInfo.title}</h1>
                 </div>
-                {partyInfo && <>
+                {leaderInfo && <>
                     <div className={styles.author}>
-                        <div className='txtTitle'>{partyInfo.users.name}</div>
-                        <div className='caption'>@{partyInfo.name}</div>
+                        <div className='txtTitle'>{leaderInfo.name}</div>
+                        {/* <div className='caption'>@{partyInfo.name}</div> */}
                     </div>
                 </>}
             </div>

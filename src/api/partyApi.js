@@ -15,11 +15,9 @@ export const getScheduleSearch = async (queries) => {
 }
 
 export const loginToLaravel = async (data) => {
-    const response = await axios.post(be_url + '/login', null, {
-        params: {
-            ...data
-        }
-    }).catch(()=>{});
+    const response = await axios.post(be_url + '/login', {
+        ...data
+    }, {}).catch(()=>{});
     return response;
 }
 
@@ -87,6 +85,18 @@ export const getBlizzardAccessToken = async () => {
     const access_token = Cookies.get('blizzard_access_token');
     if (access_token) return
     await axios.post(be_url + '/blizzard/access_token').then((res) => {
+        Cookies.set('blizzard_access_token', res.data.data.access_token, { expires: 47 / 48 });
+    })
+}
+
+export const getBlizzardOAuthToken = async (code) => {
+    let oauth_token = Cookies.get('blizzard_oauth_token');
+    if (oauth_token) return
+    await axios.post(be_url + '/blizzard/oauth_token', null, {
+        params: {
+            "code" : code
+        }
+    }).then((res) => {
         Cookies.set('blizzard_access_token', res.data.data.access_token, { expires: 47 / 48 });
     })
 }

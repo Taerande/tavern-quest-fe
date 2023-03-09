@@ -28,15 +28,15 @@ const ScheduleQueryView = ({ queries, instanceDB }) => {
                         <span style={{ color: 'red' }}>({ getFullDayName(queries.end)})</span>
                     </div>}
                 </div>
-                <div className={styles.instacne}>
-                    {queries.dungeon && <div>
-                        <Icon size={1} path={mdiMapMarker} color='red' />인스턴스 : 
+                {queries.dungeon && <div className={styles.instacne}>
+                    <>
+                        <Icon size={1} path={mdiMapMarker} color='red' />인스턴스 :
                         {instanceDB.find(v => v.id === queries.dungeon).name}
-                        {queries.difficulty && `(${queries.difficulty.toUpperCase().slice(0,1)})`}
-                    </div>}
-                </div>
-                <div className={styles.reward}>
-                    {(queries.reward_min || queries.reward_max) &&
+                        {queries.difficulty && `(${queries.difficulty.toUpperCase().slice(0, 1)})`}
+                    </>
+                </div>}
+                {(queries.reward_min || queries.reward_max) &&
+                    <div className={styles.reward}>
                         <>
                             <Icon size={1} path={mdiGold} color='red' />보상 : 
                             {queries.reward_min &&
@@ -48,30 +48,29 @@ const ScheduleQueryView = ({ queries, instanceDB }) => {
                                 {queries.reward_max}
                             </div>}
                         </>
-                    }
-                </div>
-                <div className={styles.recruit}>
-                    {queries.recruit && 
-                        <>
-                            <Icon size={1} path={mdiAccountSearch} color='red' />클래스 : 
-                            {queries.recruit.map((v) => {
-                                const specData = wowSpecs.find(val => val.id === v);
-                                return <div key={v} className={styles.avatarContainer}>
-                                    <img src={specData.imgUrl} className={styles.avatar} />
-                                    <div style={{
-                                        color: specData.color,
-                                        padding: '2px 6px',
-                                        fontSize:'12px',
-                                        backgroundColor: 'black',
-                                        borderRadius: '8px'
-                                    }}>
-                                        {specData.spec}
+                </div>}
+                {queries.recruit && 
+                    <div className={styles.recruit}>
+                            <>
+                                <Icon size={1} path={mdiAccountSearch} color='red' />클래스 : 
+                                {queries.recruit.map((v) => {
+                                    const specData = wowSpecs.find(val => val.id === v);
+                                    return <div key={v} className={styles.avatarContainer}>
+                                        <img src={specData.imgUrl} className={styles.avatar} alt='recruit_spec_img' />
+                                        <div style={{
+                                            color: specData.color,
+                                            padding: '2px 6px',
+                                            fontSize:'12px',
+                                            backgroundColor: 'black',
+                                            borderRadius: '8px'
+                                        }}>
+                                            {specData.spec}
+                                        </div>
                                     </div>
-                                </div>
-                            })}
-                        </>
-                    }
-                </div>
+                                })}
+                            </>
+                    </div>
+                }
             </div>
             <Divider/>
         </div>

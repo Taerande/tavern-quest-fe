@@ -12,17 +12,16 @@ const ScheduleReward = () => {
 
     const [checkReward, setCheckReward] = useState(false);
 
-    const validateRewardValues = (value, target) => {
-        console.log(value, target);
-        if (target === 'min' && value*1 > maxReward*1) {
-            setMinErrorMessage('error in min')
-        }
-        if (target === 'max' && value * 1 < minReward * 1) {
-            setMaxErrorMessage('Error')
-        }
+    // const validateRewardValues = (value, target) => {
+    //     if (target === 'min' && value*1 > maxReward*1) {
+    //         setMinErrorMessage('error in min')
+    //     }
+    //     if (target === 'max' && value * 1 < minReward * 1) {
+    //         setMaxErrorMessage('Error')
+    //     }
 
 
-    }
+    // }
     // const changeMinValue = (e) => {
     //     if (e.target.value.length < 13) {
     //         validateRewardValues(e.target.value, 'min');
@@ -57,7 +56,7 @@ const ScheduleReward = () => {
                     label="최소"
                     disabled={!checkReward}
                     // onChange={changeMinValue}
-                    inputProps={{ type: 'number', inputMode: 'numeric', pattern: "^\d{0,12}$" }}
+                    inputProps={{ type: 'number', inputMode: 'numeric', pattern: "^[1-9]\d{0,11}$" }}
                     helperText={ minErrorMessage }
                 />
                 <TextField
@@ -66,7 +65,7 @@ const ScheduleReward = () => {
                     label="최대"
                     disabled={!checkReward}
                     // onChange={changeMaxValue}
-                    inputProps={{ type: 'number', inputMode: 'numeric', pattern: "^\d{0,12}$" }}
+                    inputProps={{ type: 'number', inputMode: 'numeric', pattern: "^[1-9]\d{0,11}$" }}
                     helperText={ maxErrorMessage }
                 />
             </div>

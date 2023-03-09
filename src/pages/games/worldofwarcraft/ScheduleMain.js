@@ -83,8 +83,8 @@ const ScheduleMain = () => {
             <Grid container>
                 {fetchData.data.length > 0 && fetchData.data.map((v) => {
                     return (
-                        <Grid item key={v.id} >
-                            <Card className={ styles.scheduleContainer} sx={{ m: 3, p: 1 }} onClick={() => history(`/worldofwarcraft/schedule/${v.id}`)} style={{cursor:'pointer'}}>
+                        <Grid item key={v.id} style={{ width:'100%', margin: '16px'}} >
+                            <Card className={ styles.scheduleContainer} sx={{ p: 2, }} onClick={() => history(`/worldofwarcraft/schedule/${v.id}`)} style={{cursor:'pointer'}}>
                                 <div>
                                     <div style={{
                                         display: 'flex',
@@ -102,12 +102,12 @@ const ScheduleMain = () => {
                                         </div>
                                     </div>
                                     <div style={{ display: 'flex', justifyContent: 'space-between', padding:'8px' }}>
-                                        <span>
+                                        <div style={{display:'flex',columnGap:'8px'}}>
                                             <Chip size='small' label={ allInstances.find(el => el.id === v.dungeon).name } />
                                             <Chip size='small' label={ v.difficulty } />
                                             <Chip size='small' label={ v.goal } />
-                                        </span>
-                                        <div stlye={{fontStyle: 'italic', fontSize:'12px'}}>{ v.party.name }</div>
+                                        </div>
+                                        <div stlye={{fontStyle: 'italic', fontSize:'12px'}}>{ v.characters[0].name }</div>
                                     </div>
                                     <div>
                                         {v.start} ~ { v.end }
@@ -134,8 +134,9 @@ const ScheduleMain = () => {
                         </Grid>
                     )
                 })}
-                {fetchData.data.length === 0 && <div>
-                No Data</div>}
+                    {fetchData.data.length === 0 && <div className={styles.notFound}>
+                        🤐 만족하는 파티가 없습니다.
+                </div>}
             </Grid>
             {<Pagination sx={{display:'flex',justifyContent:'center',alignItems:'center',width:'100%',padding:'30px 0px'}} size='large' variant="outlined" shape="rounded" count={fetchData.last_page} page={page} onChange={pageChangeHandelr} color="primary" />}
             </>}

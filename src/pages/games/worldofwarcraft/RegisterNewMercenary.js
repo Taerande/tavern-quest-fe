@@ -1,8 +1,5 @@
 import Button from '../../../components/ui/Button'
-import InputText from '../../../components/ui/Input/InputText'
 import InputTextArea from '../../../components/ui/Input/InputTextArea'
-import InputDateTime from '../../../components/ui/Input/InputDateTime';
-import SpecSelector from '../../../components/native/SpecSelector';
 import Selector from '../../../components/ui/Selector/Selector';
 import SelectorItem from 'components/ui/Selector/SelectorItem';
 import wowDB from 'assets/game_data/wowDungeons.json';
@@ -11,7 +8,7 @@ import styles from './CreateNewSchedule.module.css'
 import { uiActions } from 'store/ui-slice';
 import { useNavigate } from 'react-router-dom';
 import wowSpec from 'assets/game_data/wowSpecs.json';
-import { useReducer, useState } from 'react';
+import { useState } from 'react';
 import { addNewMercenary } from 'api/firebaseApi';
 const wowDungeons = wowDB;
 
@@ -21,14 +18,6 @@ const CreateNewSchedule = () => {
     const dispatch = useDispatch();
     const history = useNavigate();
     const myCharacters = useSelector(state => state.auth.availableCharacters);
-    const authorUid = useSelector(state => state.auth.uid);
-    const initState = {
-        character: '',
-        spec: '',
-        place: '',
-        difficulty: '',
-    }
-    // const [optionalData, dispatchInput] = useReducer(first, second, third)
 
     const sumbitHandler = (e) => {
         e.preventDefault();

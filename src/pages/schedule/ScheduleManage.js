@@ -1,6 +1,5 @@
 import { getApplicants, getMembers, getScheduleData } from "api/firebaseApi";
 import ScheduleHeader from "components/schedule/ScheduleHeader";
-import ScheduleMain from "components/schedule/ScheduleMain";
 import LoadingSpinner from "components/ui/LoadingSpinner";
 import styles from './ScheduleManage.module.css'
 import { useEffect, useState } from "react"

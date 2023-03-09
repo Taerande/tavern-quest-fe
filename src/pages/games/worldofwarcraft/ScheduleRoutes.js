@@ -4,10 +4,8 @@ import styles from './ScheduleRoutes.module.css'
 import Button from '@mui/material/Button'
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "store/ui-slice";
-import ScheduleManage from "pages/schedule/ScheduleManage";
 const ScheduleMain = React.lazy(() => import("./ScheduleMain"));
 const ScheduleFilter = React.lazy(() => import("components/games/worldofwarcraft/ScheduleFilter"));
-// const CreateNewSchedule = React.lazy(() => import("./CreateNewSchedule"));
 const CreateNewSchedule = React.lazy(() => import("./CreateNewScheduleV2"));
 const Schedule = React.lazy(() => import("pages/schedule/Schedule"));
   
@@ -38,7 +36,6 @@ const ScheduleRoutes = () => {
                     <Route path='search' element={<ScheduleFilter />}/>
                     <Route path='register' element={auth.isLogin ? <CreateNewSchedule /> : <Navigate replace to='/worldofwarcraft/schedule'/>} />
                     <Route path=':scheduleId' element={<Schedule/>}/>
-                    <Route path=':scheduleId/manage' element={<ScheduleManage/>}/>
                     <Route path='*' element={<Navigate replace to='/worldofwarcraft/schedule'/>}/>
                 </Routes>
             </div>

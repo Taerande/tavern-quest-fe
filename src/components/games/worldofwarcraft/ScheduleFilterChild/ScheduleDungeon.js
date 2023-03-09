@@ -44,12 +44,15 @@ const ScheduleDungeon = () => {
     const changeTypenHandler = (e) => {
         setDifficulty('');
         setDungeon('');
+        setGoal('');
         setType(e.target.value);
     }
     const changeDungeonHandler = (e) => {
+        setGoal('');
         setDungeon(e.target.value);
     }
     const changeDifficultyHandler = (e) => {
+        setGoal('');
         setDifficulty(e.target.value);
     }
     const changeGoalHandler = (e) => {
@@ -62,7 +65,7 @@ const ScheduleDungeon = () => {
         } else if (type === 'df_raid' && dungeon !== '') {
             return wowDungeon.find(v => v.id === type).instances.find(v => v.id === dungeon).boses;
         } else {
-            return [{id:0, name:'none'}]
+            return []
         }
     }
     return (
@@ -141,14 +144,14 @@ const ScheduleDungeon = () => {
                     inputProps={{
                         id: "goal-select"
                     }}
-                    disabled={difficulty === '' || filteredGoal().length === 0}
+                    disabled={filteredGoal().length === 0}
                     onChange={changeGoalHandler}
                 >
                     {filteredGoal().map((v,idx) => {
                         return <MenuItem key={`${v.id}-${idx}`} value={v.id}>{v.name}</MenuItem>
                     }) }
                 </Select>
-                {dungeon === '' && <FormHelperText sx={{color:'var(--alert-color)'}}>난이도를 먼저 선택해야 합니다.</FormHelperText>}
+                {(filteredGoal().length === 0) && <FormHelperText sx={{color:'var(--alert-color)'}}>레이드나 쐐기돌만 지정가능 합니다.</FormHelperText>}
             </FormControl>
         </div>
     )

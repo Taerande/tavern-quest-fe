@@ -4,8 +4,6 @@ import InputTextArea from '../../../components/ui/Input/InputTextArea'
 import SpecSelector from '../../../components/native/SpecSelector';
 import Selector from '../../../components/ui/Selector/Selector';
 import SelectorItem from 'components/ui/Selector/SelectorItem';
-import wowDB from 'assets/game_data/wowDungeons.json';
-import wowSpecs from 'assets/game_data/wowSpecs.json';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './CreateNewSchedule.module.css'
 import { uiActions } from 'store/ui-slice';
@@ -13,7 +11,6 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import ScheduleDateTime from 'components/games/worldofwarcraft/ScheduleFilterChild/ScheduleDateTime';
 import ScheduleDungeon from 'components/games/worldofwarcraft/ScheduleFilterChild/ScheduleDungeon';
-import ScheduleReward from 'components/games/worldofwarcraft/ScheduleFilterChild/ScheduleReward';
 import { Divider, TextField } from '@mui/material';
 import { createSchedule } from 'api/partyApi';
 
@@ -53,7 +50,7 @@ const CreateNewSchedule = () => {
     return (<form onSubmit={sumbitHandler} className={ styles.container }>
         <Divider style={{padding:'20px'}} />
         <div className={'subTitle'}>기본 정보</div>
-        <Selector placholder='내 캐릭터' id="my_characters" onSelect={(val) => console.log(val)}>
+        <Selector placholder='내 캐릭터' id="my_characters" onSelect={() => {}}>
             {myCharacters.map((v) => {
                 return <SelectorItem value={v.id} key={v.name + v.realm}>
                     <div style={{display:'flex', alignItems:'center'}}>
@@ -91,7 +88,7 @@ const CreateNewSchedule = () => {
             id="reward"
             label="보상"
             // onChange={changeMinValue}
-            inputProps={{ type: 'number', inputMode: 'numeric', pattern: "^\d{0,12}$" }}
+            inputProps={{ type: 'number', inputMode: 'numeric', pattern: "^[1-9]\d{0,11}$" }}
         />
         <Divider style={{padding:'20px'}} />
         <div className={'subTitle'}>클래스</div>

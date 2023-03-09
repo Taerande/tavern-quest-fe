@@ -3,6 +3,9 @@
     align-items: center;
 }
 
+.scheduleContainer{
+    width: 100%;
+}
 .scheduleContainer:hover {
     background-color: var(--dark-color);
 }
@@ -13,4 +16,14 @@
     display: flex;
     justify-content: end;
     align-items: center;
+}
+.notFound{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 30vh;
+    font-size: 3rem;
+    font-weight: 700;
 }
