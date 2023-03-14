@@ -10,11 +10,12 @@ import Modal from "components/ui/Modal/Modal"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { uiActions } from "store/ui-slice"
-// import styles from './ApplySchedule.module.css'
+import styles from './ApplySchedule.module.css'
 import RecruitItem from "./RecruitItem"
 import wowSpecs from 'assets/game_data/wowSpecs.json'
 import { checkScheduleIn, applyForSchedule } from "api/partyApi"
 import InputTextArea from "components/ui/Input/InputTextArea"
+import { Link } from "react-router-dom"
 
 const ApplySchedule = ({ data }) => {
     const dispatch = useDispatch();
@@ -75,7 +76,6 @@ const ApplySchedule = ({ data }) => {
     const applyHandler = async () => {
         setApplyLoading(true);
         const charData = selectedChar;
-        console.log(charData);
         const applyComment = document.getElementById('apply').value;
         applyForSchedule(data.id, charData, applyComment).then(() => {
             dispatch(uiActions.toggleSnackbar({ type: 'success', value: true, message: '파티에 정상적으로 지원했습니다.' }));
@@ -90,50 +90,63 @@ const ApplySchedule = ({ data }) => {
     }
     return (
         <>
-            <Button disabled={!isAuth} onClick={modalHandler}>지원하기</Button>
-            {isModalOpen && <Modal onClose={ modalHandler }>
-                <Card>
-                    <CardHeader color={'primary'} textColor={'white'}>Character List</CardHeader>
-                    {checkInvolvedLoading && <CardContent>
-                        <LoadingSpinner/>
-                    </CardContent>}
-                    {!checkInvolvedLoading && involvedCharacter.length === 0 && <>
-                        <CardContent>
-                            {filterdCharacters.length > 0 ? <>
-                                {filterdCharacters.map((v, idx) => {
-                                    const positionData = wowSpecs.find(el => el.id === v.position);
-                                    return (
-                                        <div key={`${v.name}-${v.relam}-${idx}`}>
-                                            <RecruitItem id={positionData.id} spec={positionData.spec} color={positionData.color} imgUrl=
-                                            {positionData.imgUrl} />
-                                            <CharacterCard selected={selectedChar.name === v.name} onClick={() => selectHandler(v)} data={v} />
-                                        </div>)
-                                })}
-                                <InputTextArea
-                                    id={'apply'}
-                                    placeholder={'팀장에게 메시지를 남기세요.'}
-                                    counter={"250"} />
-                            </> : <p style={{ textAlign: 'center', padding: '2rem' }}>만족하는 캐릭터가 없습니다.</p>}
-                        </CardContent>
-                        <CardAction>
-                            <Button
-                                color={"primary"}
-                                loading={applyLoading}
-                                disabled={selectedChar ? false : true}
-                                onClick={applyHandler}>
-                                <div>apply</div>
-                            </Button>
-                            <Button color={"alert"} onClick={modalHandler}>
-                                <div>close</div>
-                            </Button>
-                        </CardAction>
-                    </>}
-                    {!checkInvolvedLoading && involvedCharacter.length > 0 && <CardContent>
-                        {involvedCharacter.map((v) => {
-                            return <InvolvedCharacterCard key={v.id} data={ v } />
-                        })}
-                    </CardContent>}
-                </Card>
+            <Button onClick={modalHandler}>지원하기</Button>
+            {isModalOpen && <Modal onClose={modalHandler}>
+                {isAuth ? <>
+                    <Card>
+                        <CardHeader color={'primary'} textColor={'white'}>Character List</CardHeader>
+                        {checkInvolvedLoading && <CardContent>
+                            <LoadingSpinner/>
+                        </CardContent>}
+                        {!checkInvolvedLoading && involvedCharacter.length === 0 && <>
+                            <CardContent>
+                                {filterdCharacters.length > 0 ? <>
+                                    {filterdCharacters.map((v, idx) => {
+                                        const positionData = wowSpecs.find(el => el.id === v.position);
+                                        return (
+                                            <div key={`${v.name}-${v.relam}-${idx}`}>
+                                                <RecruitItem id={positionData.id} spec={positionData.spec} color={positionData.color} imgUrl=
+                                                {positionData.imgUrl} />
+                                                <CharacterCard selected={selectedChar.name === v.name} onClick={() => selectHandler(v)} data={v} />
+                                            </div>)
+                                    })}
+                                    <InputTextArea
+                                        id={'apply'}
+                                        placeholder={'팀장에게 메시지를 남기세요.'}
+                                        counter={"250"} />
+                                </> : <p style={{ textAlign: 'center', padding: '2rem' }}>만족하는 캐릭터가 없습니다.</p>}
+                            </CardContent>
+                            <CardAction>
+                                <Button
+                                    color={"primary"}
+                                    loading={applyLoading}
+                                    disabled={selectedChar ? false : true}
+                                    onClick={applyHandler}>
+                                    <div>apply</div>
+                                </Button>
+                                <Button color={"alert"} onClick={modalHandler}>
+                                    <div>close</div>
+                                </Button>
+                            </CardAction>
+                        </>}
+                        {!checkInvolvedLoading && involvedCharacter.length > 0 && <CardContent>
+                            {involvedCharacter.map((v) => {
+                                return <InvolvedCharacterCard key={v.id} data={ v } />
+                            })}
+                        </CardContent>}
+                    </Card>
+                </> : <>
+                        <Card>
+                            <CardHeader color={'primary'} textColor={'white'}>로그인</CardHeader>
+                            <CardContent>
+                                <Link to="/signin" className={styles.signinLink}>
+                                    <img style={{ width: '36px', height: '36px', cursor: 'pointer', borderRadius: '100%' }} src={require('assets/images/logo128.png')} alt="logo_img" />
+                                <div style={{textDecoration:'none',color:'var(--primary-color)',fontWeight:'700',fontSize:'1.2rem'
+                    }}>로그인하기</div>
+                                </Link>
+                            </CardContent>
+                        </Card>
+                </>}
             </Modal>}
         </>
     )

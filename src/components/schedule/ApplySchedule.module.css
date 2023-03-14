@@ -41,3 +41,17 @@
     background-color: black;
     border-radius: 16px;
 }
+
+.signinLink{
+    margin: auto;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    transition: scale 0.1s ease;
+}
+
+.signinLink:hover{
+    scale: 1.1;
+
+}

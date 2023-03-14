@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getBlizzardAccessToken } from 'api/partyApi';
 import { getLaravelAuth } from 'store/auth-actions';
 import { Divider } from '@mui/material';
+import SocialLogin from 'pages/auth/SocialLogin';
 
 
 // Lazy loading
@@ -44,7 +45,9 @@ function App() {
             <Route path='/worldofwarcraft/schedule/*' element={<ScheduleRoutes/>}/>
              <Route path='/worldofwarcraft/mercenary/register' element={<RegisterNewMercenary/>}/>
             <Route path='/worldofwarcraft/mercenary' element={<MercenariesWOW/>}/>
-            {!isAuthenticated && <Route path='/signin' element={<SignIn />}/>}
+            {!isAuthenticated && <Route path='/signin' element={<SignIn />} />}
+            <Route path='/worldofwarcraft/mercenary' element={<MercenariesWOW />} />
+            <Route path='/login/:provider' element={<SocialLogin />} />
             <Route
               path="*"
               element={<Navigate replace to="/" />} />

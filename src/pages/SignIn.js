@@ -9,8 +9,9 @@ import { loginToLaravel } from 'api/partyApi';
 import { Divider } from "@mui/material"
 import Cookies from 'js-cookie';
 import { getLaravelAuth } from 'store/auth-actions';
+import { naverLogin } from 'api/loginApi';
 
-
+const fe_url = process.env.REACT_APP_FRONT_END_URL;
 
 const SignIn = () => {
     const dispatch = useDispatch()
@@ -18,6 +19,12 @@ const SignIn = () => {
     const [autoLogin, setAutoLogin] = useState(false);
     // const [googleBtnLoading, setGoogleBtnLoading] = useState(false);
     const [emailBtnLoading, setEmailBtnLoading] = useState(false);
+    const naverLoginHandler = () => {
+        window.location = `https://nid.naver.com/oauth2.0/authorize?client_id=jLobB0i2dKrNzKjYHeYb&response_type=code&redirect_uri=${fe_url}/login/naver&state=123`
+    }
+    const kakaoLoginHandler = () => {
+        window.location = `https://kauth.kakao.com/oauth/authorize?client_id=a691f50a917e027782d556f8df5f8a5a&response_type=code&redirect_uri=${fe_url}/login/kakao&state=123`
+    }
 
     const autoLoginOnChangeHandler = (e) => {
         setAutoLogin(e.target.checked);
@@ -97,11 +104,11 @@ const SignIn = () => {
                     <img src={require('assets/images/social_providers/google_logo.png') } alt="google_login"></img>
                     <span>구글로 로그인</span>
                 </Button> */}
-            <Button block={true} disabled>
+            <Button block={true} onClick={naverLoginHandler}>
                 <img src={require('assets/images/social_providers/naver_logo.png') } alt="google_login"></img>
                 <span style={{padding: '10px'}}>네이버로 로그인</span>
             </Button>
-            <Button block={true} color="warning" disabled>
+            <Button block={true} color="warning" onClick={kakaoLoginHandler}>
                 <img src={require('assets/images/social_providers/kakao_logo.png') } alt="google_login"></img>
                 <span style={{padding: '10px'}}>카카오로 로그인</span>
             </Button>
